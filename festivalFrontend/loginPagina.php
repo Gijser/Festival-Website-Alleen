@@ -7,12 +7,24 @@
                 <h1><a href="#">Rock Festival</a></h1>
                 <h2>festival</h2>
             </div>
-            <nav>
+            <nav id="nav">
                 <ul>
                     <li><a href="Tickets.php">Tickets</a></li>
                     <li><a href="profielPagina.php">Profiel</a></li>
                     <li class="last"><a href="index.php">Home</a></li>
                 </ul>
+            </nav>
+            <nav id="nav">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
+                        </td>
+                        <td>
+                            <input type="input" name="wachtwoord" placeholder="wachtwoord">
+                        </td>
+                    </tr>
+                </table>
             </nav>
         </header>
         <div class="wrapper row2">

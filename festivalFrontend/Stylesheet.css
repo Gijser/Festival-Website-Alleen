@@ -37,6 +37,10 @@ div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 .row2 a{color:#FF9900; background-color:#FFFFFF;}
 .row3, .row3 a{color:#919191; background-color:#232323;}
 
+/* ----------------------------------------------Overig-------------------------------------*/
+
+#navLogin, #nav{width: 400px; height: 15px;}
+#navLogin{float: left;}
 /*----------------------------------------------Generalise-------------------------------------*/
 
 #header, #container, #footer{display:block; width:960px; margin:0 auto;}
