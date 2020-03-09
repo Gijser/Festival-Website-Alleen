@@ -2,7 +2,7 @@
 
 <form>
     <div class="wrapper row1">
-        <header id="header" class="clear">
+        <header id="header" class="clear">      
             <div id="hgroup">
                 <h1><a href="#">Rock Festival</a></h1>
                 <h2>festival</h2>
