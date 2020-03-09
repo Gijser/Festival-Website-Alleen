@@ -17,11 +17,14 @@
       <nav id="nav">
                 <table>
                     <tr>
-                        <td>
+                    <td>
                             <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
                         </td>
                         <td>
                             <input type="input" name="wachtwoord" placeholder="wachtwoord">
+                        </td>
+                        <td>
+                            <input type="submit" name="btnLogin" value="login">
                         </td>
                     </tr>
                 </table>

@@ -1,8 +1,16 @@
 <?php require("header.php"); ?>
+<?php require("database.php"); ?>
+<?php require("db_connect.php"); ?>
+
+<?php
+db_connect();
+insert();
+
+?>
 
 <form>
     <div class="wrapper row1">
-        <header id="header" class="clear">      
+        <header id="header" class="clear">
             <div id="hgroup">
                 <h1><a href="#">Rock Festival</a></h1>
                 <h2>festival</h2>
@@ -23,6 +31,9 @@
                         <td>
                             <input type="input" name="wachtwoord" placeholder="wachtwoord">
                         </td>
+                        <td>
+                            <input type="submit" name="btnLogin" value="login">
+                        </td>
                     </tr>
                 </table>
             </nav>
@@ -41,6 +52,11 @@
                             <input type="input" name="wachtwoord" placeholder="wachtwoord">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="btnLogin" value="Login">
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
@@ -51,20 +67,37 @@
                 <p>registreren</p>
                 <table>
                     <tr>
+                    <tr>
                         <td>
-                            <input type="input" name="regGebruikern" placeholder="gebruikersnaam">
+                            <input type="text" name="voornaam" placeholder="voornaam">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="input" name="regWW" placeholder="wachtwoord">
+                            <input type="text" name="achternaam" placeholder="achternaam">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="input" name="regMail" placeholder="E-mail">
+                            <input type="text" name="email" placeholder="E-mail">
                         </td>
                     </tr>
+                    <td>
+                        <input type="text" name="Gebruikersnaam" placeholder="gebruikersnaam">
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="Wachtwoord" placeholder="wachtwoord">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="btnRegister" value="registreren">
+                            
+                        </td>
+                    </tr>
+
                 </table>
             </div>
         </div>
