@@ -1,6 +1,7 @@
 <?php require("header.php"); ?>
-<?php require("database.php"); ?>
-<?php require("db_connect.php"); ?>
+
+
+
 
 <?php
 db_connect();
@@ -94,7 +95,6 @@ insert();
                     <tr>
                         <td>
                             <input type="submit" name="btnRegister" value="registreren">
-                            
                         </td>
                     </tr>
 
