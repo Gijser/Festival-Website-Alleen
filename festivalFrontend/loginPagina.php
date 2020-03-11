@@ -40,29 +40,6 @@
                 </table>
             </nav>
         </header>
-        <div class="wrapper row2">
-            <div id="container" class="clear">
-                <p>inloggen</p>
-                <table>
-                    <tr>
-                        <td>
-                            <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="input" name="wachtwoord" placeholder="wachtwoord">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" name="btnLogin" value="Login">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
     <div class="wrapper row2">
         <div id="container" class="clear">
             <div>
