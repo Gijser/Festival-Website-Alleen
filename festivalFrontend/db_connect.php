@@ -3,7 +3,7 @@
 function OpenCon()
 {
 $dbhost = "localhost";
-$dbuser = "Admin";
+$dbuser = "root";
 $dbpass = "";
 $db = "festival";
 $conn = mysqli_connect($dbhost, $dbuser,$dbpass, $db) or die("Connect failed: %s\n". $conn -> error);
@@ -17,4 +17,3 @@ $conn -> close();
 }
 
 
-?>

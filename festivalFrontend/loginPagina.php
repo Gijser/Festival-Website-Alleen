@@ -1,13 +1,12 @@
 <?php require("header.php"); ?>
-<?php  require('db_connect.php'); ?>
-<?php // require('db_functions.php'); ?>
+<?php require('db_connect.php'); ?>
+<?php require_once('db_fuctions.php'); ?>
 
 <?php
-
-
+insertDB();
 ?>
 
-<form>
+<form method="post">
     <div class="wrapper row1">
         <header id="header" class="clear">
             <div id="hgroup">
@@ -44,7 +43,7 @@
         <div id="container" class="clear">
             <div>
                 <p>registreren</p>
-                <form class="align-center" method="post">
+                <form class="align-center" >
                     <div>
                         <input type="text" name="voornaam" placeholder="voornaam">
                     </div>
