@@ -8,9 +8,6 @@
     <title>festival</title>
     <link rel="stylesheet" href="Stylesheet.css" type="text/css">
 </head>
-<?php
-require_once("database.php");
-$db = mysqli_connect('localhost', 'festivalUser', '123', 'festival');
-?>
+
 
 <body>

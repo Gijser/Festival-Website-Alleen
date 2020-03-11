@@ -10,7 +10,6 @@
       <nav id="nav">
         <ul>
           <li><a href="Tickets.php">Tickets</a></li>
-          <li><a href="loginPagina.php">Inloggen/Registreren</a></li>
           <li class="last"><a href="index.php">Home</a></li>
         </ul>
       </nav>
@@ -25,6 +24,9 @@
                         </td>
                         <td>
                             <input type="submit" name="btnLogin" value="login">
+                        </td>
+                        <td>
+                        <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
                         </td>
                     </tr>
                 </table>

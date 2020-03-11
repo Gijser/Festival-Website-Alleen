@@ -39,8 +39,9 @@ div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
 /* ----------------------------------------------Overig-------------------------------------*/
 
-#navLogin, #nav{width: 400px; height: 15px;}
+#navLogin, #nav{width: 450px; height: 15px;}
 #navLogin{justify-content: center;}
+.align-center {text-align: center;}
 /*----------------------------------------------Generalise-------------------------------------*/
 
 #header, #container, #footer{display:block; width:960px; margin:0 auto; flex-flow: centrew;}

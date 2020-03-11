@@ -1,11 +1,9 @@
 <?php require("header.php"); ?>
-
-
-
+<?php  require('db_connect.php'); ?>
+<?php // require('db_functions.php'); ?>
 
 <?php
-db_connect();
-insert();
+
 
 ?>
 
@@ -26,7 +24,7 @@ insert();
             <nav id="nav">
                 <table>
                     <tr>
-                        <td>
+                    <td>
                             <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
                         </td>
                         <td>
@@ -34,6 +32,9 @@ insert();
                         </td>
                         <td>
                             <input type="submit" name="btnLogin" value="login">
+                        </td>
+                        <td>
+                        <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
                         </td>
                     </tr>
                 </table>
@@ -66,39 +67,27 @@ insert();
         <div id="container" class="clear">
             <div>
                 <p>registreren</p>
-                <table>
-                    <tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="voornaam" placeholder="voornaam">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="achternaam" placeholder="achternaam">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="email" placeholder="E-mail">
-                        </td>
-                    </tr>
-                    <td>
+                <form class="align-center" method="post">
+                    <div>
+                        <input type="text" name="voornaam" placeholder="voornaam">
+                    </div>
+                    <div>
+                        <input type="text" name="achternaam" placeholder="achternaam">
+                    </div>
+                    <div>
+                        <input type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div>
                         <input type="text" name="Gebruikersnaam" placeholder="gebruikersnaam">
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" name="Wachtwoord" placeholder="wachtwoord">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" name="btnRegister" value="registreren">
-                        </td>
-                    </tr>
+                    </div>
+                    <div>
+                        <input type="text" name="Wachtwoord" placeholder="wachtwoord">
+                    </div>
+                    <div>
+                        <input type="submit" name="btnRegister" value="registreren">
+                    </div>
 
-                </table>
+                    <form>
             </div>
         </div>
     </div>
