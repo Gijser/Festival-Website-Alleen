@@ -4,7 +4,7 @@
     <div class="wrapper row1">
         <header id="header" class="clear">
             <div id="hgroup">
-                <h1><a href="#">Rock Festival</a></h1>
+            <h1><a href="index.php">Rock Festival</a></h1>
                 <h2>festival</h2>
             </div>
             <nav id="nav">

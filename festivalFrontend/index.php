@@ -1,11 +1,16 @@
 <?php require("header.php"); ?>
+<?php require_once('db_connect.php'); ?>
+<?php require_once('db_fuctions.php'); ?>
 
+<?php
+login();
+?>
 
 <body>
   <div class="wrapper row1">
     <header id="header" class="clear">
       <div id="hgroup">
-        <h1><a href="#">Rock Festival</a></h1>
+      <h1><a href="index.php">Rock Festival</a></h1>
         <h2>festival</h2>
       </div>
       <nav id="nav">
@@ -14,6 +19,7 @@
           <li class="last"><a href="profielPagina.php">Profiel</a></li>
         </ul>
       </nav>
+      <form method="POST">
       <nav id="nav">
                 <table>
                     <tr>
@@ -32,6 +38,7 @@
                     </tr>
                 </table>
             </nav>
+      </form>
     </header>
   </div>
   <!-- content -->
