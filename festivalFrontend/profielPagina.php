@@ -36,16 +36,66 @@
       <div id="container" class="clear">
 
 
-      </div>
+
 
       <article class="clear">
         <figcaption>
           <h2>informatie over uw profiel</h2>
+          <div id="container" class="clear">
+        <div>
+            <table id="table" border="1px">
+                <tr>
+                    <td>
+                        <p>Voornaam</p>
+                    </td>
+                    <td>
+                        <p>Achternaam</p>
+                    </td>
+                    <td>
+                        <p>Email</p>
+                    </td>
+                    <td>
+                        <p>Telefoonnummer</p>
+                    </td>
+                    <td>
+                        <p>Gebruikersnaam</p>
+                    </td>
+                    <td>
+                        <p>Wachtwoord</p>
+                    </td>
+                    <td>
+                        <p>Rol</p>
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                    <td>
+                        <p></p>
+                    </td>
+                </tr>
+            </table>
           <p>heel wat info</p>
         </figcaption>
         </figure>
       </article>
-
+      </div>
 
 
 </form>
