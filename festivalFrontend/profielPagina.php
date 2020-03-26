@@ -6,7 +6,7 @@
 login();
 ?>
 
-<form>
+<form method="POST">
   <div class="wrapper row1">
     <header id="header" class="clear">
       <div id="hgroup">

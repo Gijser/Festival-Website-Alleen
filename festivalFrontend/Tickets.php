@@ -7,7 +7,7 @@ login();
 ?>
 
 
-<form>
+<form method="POST">
     <div class="wrapper row1">
         <header id="header" class="clear">
             <div id="hgroup">
@@ -23,7 +23,7 @@ login();
             <nav id="nav">
                 <table>
                     <tr>
-                    <td>
+                        <td>
                             <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
                         </td>
                         <td>
@@ -33,7 +33,7 @@ login();
                             <input type="submit" name="btnLogin" value="login">
                         </td>
                         <td>
-                        <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
+                            <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
                         </td>
                     </tr>
                 </table>
@@ -41,7 +41,7 @@ login();
         </header>
         <div class="wrapper row2">
             <div id="container" class="clear">
-                <h2>Tickets</h2>                    
+                <h2>Tickets</h2>
             </div>
             <div id="container" class="clear">
                 <h1>Basic</h1>
@@ -60,7 +60,7 @@ login();
             </div>
         </div>
     </div>
-        </form>
+</body>
 
 
 <?php require("footer.php"); ?>
