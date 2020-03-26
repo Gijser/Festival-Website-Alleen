@@ -4,6 +4,7 @@
 
 <?php
 insertDB();
+login();
 ?>
 
 <form method="post">
