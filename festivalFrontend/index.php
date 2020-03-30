@@ -1,10 +1,16 @@
 <?php require("header.php"); ?>
+<?php require("logout.php"); ?>
 <?php require_once('db_connect.php'); ?>
-<?php require_once('db_fuctions.php'); ?>
+<?php require_once('db_functions.php'); ?>
 
 <?php
 login();
+//if(isset($_SESSION['login_user'])){
+//  header("location: profielPagina.php");
+//}
+
 ?>
+
 
 <body>
   <div class="wrapper row1">
@@ -34,6 +40,9 @@ login();
               </td>
               <td>
                 <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
+              </td>
+              <td>
+                <input type="submit" name="btnLogout" value="logout">
               </td>
             </tr>
           </table>
@@ -97,4 +106,4 @@ login();
   </div>
 
 
-  <?php require("footer.php"); ?>
+  <?php require("footer.php");?>

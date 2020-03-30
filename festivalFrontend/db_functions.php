@@ -1,5 +1,5 @@
 <?php require_once('db_connect.php');
-
+session_start();
 
 function insertDB()
 {
@@ -49,38 +49,32 @@ function login()
         $db = "festival";
 
         // Assigning POST values to variables.   
-        $gebruikersnaam = $_POST['gebruikersnaam'];
-        $wachtwoord = $_POST['wachtwoord'];
+        $voornaam = $_POST["voornaam"];
+        $achternaam = $_POST["achternaam"];
+        $email = $_POST["email"];
+        $gebruikersnaam = $_POST["Gebruikersnaam"];
+        $wachtwoord = $_POST["Wachtwoord"];
 
         // CHECK FOR THE RECORD FROM TABLE
         $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-        $query = "SELECT * FROM `klanten` WHERE Gebruikersnaam ='" . $gebruikersnaam . "' and Wachtwoord ='" . $wachtwoord . "'";
+        $query = "SELECT * FROM `klanten` WHERE Gebruikersnaam ='" . $gebruikersnaam . "' and Wachtwoord ='" . $wachtwoord . "' ";
 
         $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
         $count = mysqli_num_rows($result);
 
 
-        if ($count == true) {
-
-            header("location: loginPagina.php");
+        if ($count == 1) {
+            $_SESSION['login_user'] = $gebruikersnaam;
+            header("location: profielPagina.php");
             echo "Login Credentials verified";
         } else {
             header("location: Tickets.php");
             echo "Invalid Login Credentials";
         }
-        //$GLOBALS[$inlog];
-        function inlogCheck($count, $inlog)
-        {
-            if ($count == 1) {
-                $inlog == 1;
-                // in top of PHP file
-                $_SESSION["inlog"] = $inlog;
-                echo "ingelogd";
-            } else {
-                $inlog == 0;
-                // in top of PHP file
-                $_SESSION["inlog"] = $inlog;
-            }
-        }
     }
-}
+}    
+
+
+    
+
+

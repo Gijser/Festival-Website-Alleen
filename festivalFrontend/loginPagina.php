@@ -1,6 +1,6 @@
 <?php require("header.php"); ?>
 <?php require_once('db_connect.php'); ?>
-<?php require_once('db_fuctions.php'); ?>
+<?php require_once('db_functions.php'); ?>
 
 <?php
 insertDB();
