@@ -1,14 +1,14 @@
 <?php require("header.php"); ?>
-<?php require("logout.php"); ?>
+<?php require_once("logout.php"); ?>
 <?php require_once('db_connect.php'); ?>
 <?php require_once('db_functions.php'); ?>
 
 <?php
 login();
 //if(isset($_SESSION['login_user'])){
-//  header("location: profielPagina.php");
+//header("location: profielPagina.php");
 //}
-
+logout();
 ?>
 
 

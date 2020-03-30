@@ -49,15 +49,12 @@ function login()
         $db = "festival";
 
         // Assigning POST values to variables.   
-        $voornaam = $_POST["voornaam"];
-        $achternaam = $_POST["achternaam"];
-        $email = $_POST["email"];
-        $gebruikersnaam = $_POST["Gebruikersnaam"];
-        $wachtwoord = $_POST["Wachtwoord"];
+        $gebruikersnaam = $_POST["gebruikersnaam"];
+        $wachtwoord = $_POST["wachtwoord"];
 
         // CHECK FOR THE RECORD FROM TABLE
         $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-        $query = "SELECT * FROM `klanten` WHERE Gebruikersnaam ='" . $gebruikersnaam . "' and Wachtwoord ='" . $wachtwoord . "' ";
+        $query = "SELECT * FROM `klanten` WHERE Gebruikersnaam ='" . $gebruikersnaam . "' and Wachtwoord ='" . $wachtwoord . "'";
 
         $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
         $count = mysqli_num_rows($result);

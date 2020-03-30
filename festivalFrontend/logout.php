@@ -1,7 +1,7 @@
 <?php
-
+function logout(){
 if (isset($_POST['btnLogout'])){
 session_start();
-session_destroy(); // Destroying All Sessions 
-//header("Location: index.php"); // Redirecting To Home Page
-}
+if(session_destroy()) // Destroying All Sessions {
+header("Location: index.php"); // Redirecting To Home Page
+}}

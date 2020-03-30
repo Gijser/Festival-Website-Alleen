@@ -2,6 +2,7 @@
 <?php require_once('db_connect.php'); ?>
 <?php require_once('db_functions.php'); ?>
 <?php require('authen_session.php'); ?>
+
 <?php
 login();
 
