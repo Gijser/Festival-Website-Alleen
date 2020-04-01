@@ -23,22 +23,7 @@ logout();
             </nav>
             <nav id="nav">
                 <table>
-                    <tr>
-                        <td>
-                            <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
-                        </td>
-                        <td>
-                            <input type="input" name="wachtwoord" placeholder="wachtwoord">
-                        </td>
-                        <td>
-                            <input type="submit" name="btnLogin" value="login">
-                        </td>
-                        <td>
-                            <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
-                        </td>
-                        <td>
-                            <input type="submit" name="btnLogout" value="logout">
-                        </td>
+                <?php loginField(); ?>
                     </tr>
                 </table>
             </nav>

@@ -28,9 +28,7 @@ logout();
           <table>
             <?php loginField(); ?>
            
-              <td>
-                <input type="submit" name="btnLogout" value="logout">
-              </td>
+
             </tr>
           </table>
         </nav>
