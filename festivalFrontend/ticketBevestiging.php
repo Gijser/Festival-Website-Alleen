@@ -1,9 +1,10 @@
 <?php require("header.php"); ?>
 <?php require_once('db_connect.php'); ?>
 <?php require_once('db_functions.php'); ?>
-
+<?php require_once("logout.php"); ?>
 <?php
 login();
+logout();
 ?>
 <form method="POST">
     <div class="wrapper row1">
@@ -15,7 +16,7 @@ login();
             <nav id="nav">
                 <ul>
                     <li><a href="profielPagina.php">Profiel</a></li>
-                    <li><a href="Ticekts.php">Tickets</a></li>
+                    <li><a href="Tickets.php">Tickets</a></li>
                     <li class="last"><a href="index.php">Home</a></li>
                 </ul>
             </nav>
@@ -34,6 +35,9 @@ login();
                         <td>
                         <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
                         </td>
+                        <td>
+                <input type="submit" name="btnLogout" value="logout">
+              </td>
                     </tr>
                 </table>
             </nav>

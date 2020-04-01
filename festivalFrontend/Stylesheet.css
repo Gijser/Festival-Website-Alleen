@@ -39,9 +39,12 @@ div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
 /* ----------------------------------------------Overig-------------------------------------*/
 
-#navLogin, #nav{width:475px; height: 15px;}
+#navLogin, #nav{width:482px; height: 15px;}
 #navLogin{justify-content: center;}
 .align-center {text-align: center;}
+table, th, td {
+    border: 1px solid black;
+}
 /*----------------------------------------------Generalise-------------------------------------*/
 
 #header, #container, #footer{display:block; width:960px; margin:0 auto; flex-flow: centrew;}

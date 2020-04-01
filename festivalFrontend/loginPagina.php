@@ -1,10 +1,11 @@
 <?php require("header.php"); ?>
 <?php require_once('db_connect.php'); ?>
 <?php require_once('db_functions.php'); ?>
-
+<?php require_once("logout.php"); ?>
 <?php
 insertDB();
 login();
+logout();
 ?>
 
 <form method="post">
@@ -36,6 +37,9 @@ login();
                         <td>
                         <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
                         </td>
+                        <td>
+                <input type="submit" name="btnLogout" value="logout">
+              </td>
                     </tr>
                 </table>
             </nav>

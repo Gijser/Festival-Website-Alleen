@@ -5,10 +5,8 @@
 
 <?php
 login();
-//if(isset($_SESSION['login_user'])){
-//header("location: profielPagina.php");
-//}
 logout();
+
 ?>
 
 
@@ -28,19 +26,8 @@ logout();
       <form method="POST">
         <nav id="nav">
           <table>
-            <tr>
-              <td>
-                <input type="input" name="gebruikersnaam" placeholder="gebruikersnaam">
-              </td>
-              <td>
-                <input type="input" name="wachtwoord" placeholder="wachtwoord">
-              </td>
-              <td>
-                <input type="submit" name="btnLogin" value="login">
-              </td>
-              <td>
-                <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
-              </td>
+            <?php loginField(); ?>
+           
               <td>
                 <input type="submit" name="btnLogout" value="logout">
               </td>

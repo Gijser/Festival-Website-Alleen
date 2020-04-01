@@ -2,9 +2,10 @@
 <?php require_once('db_connect.php'); ?>
 <?php require_once('db_functions.php'); ?>
 <?php require('authen_session.php'); ?>
-
+<?php require_once("logout.php"); ?>
 <?php
 login();
+logout();
 
 if (!isset($_SESSION['login_user'])) {
     header("location: index.php"); // Redirecting To Home Page
@@ -41,6 +42,9 @@ if (!isset($_SESSION['login_user'])) {
                         <td>
                             <a href="loginPagina.php"><input type="button" name="btnReg" value="registreren"></a>
                         </td>
+                        <td>
+                <input type="submit" name="btnLogout" value="logout">
+              </td>
                     </tr>
                 </table>
             </nav>
@@ -56,50 +60,8 @@ if (!isset($_SESSION['login_user'])) {
                         <h2>informatie over uw profiel</h2>
                         <div id="container" class="clear">
                             <div>
+                                <?php profiel(); ?>
 
-                                <table id="table" border="1px">
-                                    <tr>
-
-                                        <td>
-                                            <p>Voornaam</p>
-                                        </td>
-                                        <td>
-                                            <p>Achternaam</p>
-                                        </td>
-                                        <td>
-                                            <p>Email</p>
-                                        </td>
-                                        <td>
-                                            <p>Telefoonnummer</p>
-                                        </td>
-                                        <td>
-                                            <p>Gebruikersnaam</p>
-                                        </td>
-                                        <td>
-                                            <p>Wachtwoord</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><?php echo $login_session; ?></p>
-                                        </td>
-                                        <td>
-                                            <p></p>
-                                        </td>
-                                        <td>
-                                            <p></p>
-                                        </td>
-                                        <td>
-                                            <p></p>
-                                        </td>
-                                        <td>
-                                            <p></p>
-                                        </td>
-                                        <td>
-                                            <p></p>
-                                        </td>
-                                    </tr>
-                                </table>
                                 <p>heel wat info</p>
                     </figcaption>
                     </figure>

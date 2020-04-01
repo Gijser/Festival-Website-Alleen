@@ -69,9 +69,62 @@ function login()
             echo "Invalid Login Credentials";
         }
     }
-}    
-
-
+}
+function profiel()
+{
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "festival";
     
+    $user_check = $_SESSION['login_user'];
+
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+    $query = "SELECT Voornaam, Achternaam, Gebruikersnaam, Wachtwoord, Email FROM klanten WHERE Gebruikersnaam = '$user_check'";
+    $sql = mysqli_query($conn, $query);
 
 
+    if ($sql->num_rows > 0) {
+        echo "<table><tr><th>Voornaam</th><th>Achternaam</th><th>Gebruikersnaam</th><th>Wachtwoord</th><th>Email</th></tr>";
+        // output data of each row
+        while ($row = $sql->fetch_assoc()) {
+            echo "<tr><td>" . $row["Voornaam"] . "</td><td>" . $row["Achternaam"] . " </td><td>" . $row["Gebruikersnaam"] . "</td><td>" . $row["Wachtwoord"] . "</td><td>" . $row["Email"] . "</td></td>";
+        }
+        echo "</table>";
+    } else {
+        echo "0 results";
+    }
+}
+function loginField()
+{
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "festival";
+
+    if ( $_SESSION['login_user'] > 0){
+    $user_check = $_SESSION['login_user'];
+
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+    $query = "SELECT Gebruikersnaam, Wachtwoord FROM klanten WHERE Gebruikersnaam = '$user_check'";
+    $sql = mysqli_query($conn, $query);
+    if ($sql->num_rows > 0) {
+        echo "<th><input type='submit' name='submit'></th>";
+    }else{
+        echo "<tr>";
+        echo "<td>";
+        echo "input type='input' name='gebruikersnaam' placeholder='gebruikersnaam'>";
+        echo "</td>";
+        echo "<td>";
+        echo "<input type='input' name='wachtwoord' placeholder='wachtwoord'>";
+        echo "</td>";
+        echo "<td>";
+        echo "<input type='submit' name='btnLogin' value='login'>";
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='loginPagina.php'><input type='button' name='btnReg' value='registreren'></a>";
+        echo "</td>";
+    }
+}
+    
+}
