@@ -47,7 +47,7 @@ table, th, td {
 }
 /*----------------------------------------------Generalise-------------------------------------*/
 
-#header, #container, #footer{display:block; width:960px; margin:0 auto; flex-flow: centrew;}
+#header, #container, #footer{display:block; width:1000px;  margin:0 auto; flex-flow: centrew;}
 
 nav ul{margin:0; padding:0; list-style:none;}
 

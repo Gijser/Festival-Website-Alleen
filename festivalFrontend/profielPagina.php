@@ -10,7 +10,6 @@ logout();
 if (!isset($_SESSION['login_user'])) {
     header("location: index.php"); // Redirecting To Home Page
 }
-
 ?>
 
 <form method="POST">
@@ -28,17 +27,13 @@ if (!isset($_SESSION['login_user'])) {
             </nav>
             <nav id="nav">
                 <table>
-                <?php loginField(); ?>
+                    <?php loginField(); ?>
                     </tr>
                 </table>
             </nav>
         </header>
         <div class="wrapper row2">
             <div id="container" class="clear">
-
-
-
-
                 <article class="clear">
                     <figcaption>
                         <h2>informatie over uw profiel</h2>
@@ -46,7 +41,6 @@ if (!isset($_SESSION['login_user'])) {
                             <div>
                                 <?php profiel(); ?>
 
-                                <p>heel wat info</p>
                     </figcaption>
                     </figure>
                 </article>

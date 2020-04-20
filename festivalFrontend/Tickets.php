@@ -2,9 +2,11 @@
 <?php require_once('db_connect.php'); ?>
 <?php require_once('db_functions.php'); ?>
 <?php require_once("logout.php"); ?>
+
 <?php
 login();
 logout();
+bestellen();
 ?>
 
 
@@ -29,6 +31,7 @@ logout();
             </nav>
         </header>
         <div class="wrapper row2">
+
             <div id="container" class="clear">
                 <h2>Tickets</h2>
             </div>
@@ -36,18 +39,25 @@ logout();
                 <h1>Basic</h1>
                 <p>€40</p>
                 <p>dit is de basis ticket</p>
+                <input type="number" id="Basic" placeholder="Aantal kaartjes" name="basic" step="1">
             </div>
             <div id="container" class="clear">
                 <h1>Premium</h1>
                 <p>€60</p>
                 <p>Dit is een premium ticket</p>
+                <input type="number" id="Premium" placeholder="Aantal kaartjes" name="premium" step="1">
             </div>
             <div id="container" class="clear">
                 <h1>Vips</h1>
                 <p>€100</p>
                 <p>Dit is een vip ticket</p>
+                <input type="number" id="vip" placeholder="Aantal kaartjes"  name="vip"  step="1">
+            </div>
+            <div id="container" class="clear">
+                <input type="submit" name="bestellen" value="Bestellen">
             </div>
         </div>
+        
     </div>
     </body>
 

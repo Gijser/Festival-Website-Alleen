@@ -65,7 +65,7 @@ function login()
             header("location: profielPagina.php");
             echo "Login Credentials verified";
         } else {
-            header("location: Tickets.php");
+            header("location: index.php");
             echo "Invalid Login Credentials";
         }
     }
@@ -76,7 +76,7 @@ function profiel()
     $dbuser = "root";
     $dbpass = "";
     $db = "festival";
-    
+
     $user_check = $_SESSION['login_user'];
 
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
@@ -102,32 +102,64 @@ function loginField()
     $dbpass = "";
     $db = "festival";
 
-    if ( isset($_SESSION['login_user'])){
-    $user_check = $_SESSION['login_user'];
+    if (isset($_SESSION['login_user'])) {
+        $user_check = $_SESSION['login_user'];
 
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-    $query = "SELECT Gebruikersnaam, Wachtwoord FROM klanten WHERE Gebruikersnaam = '$user_check'";
-    $sql = mysqli_query($conn, $query);
-    if ($sql->num_rows > 0) {
-        echo "<td> u bent ingelogd " . $user_check . "</td>";
+        $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+        $query = "SELECT Gebruikersnaam, Wachtwoord FROM klanten WHERE Gebruikersnaam = '$user_check'";
+        $sql = mysqli_query($conn, $query);
+        if ($sql->num_rows > 0) {
+            echo "<td> u bent ingelogd " . $user_check . "</td>";
+            echo "<td>";
+            echo "<input type='submit' name='btnLogout' value='logout'>";
+            echo "</td>";
+        }
+    } else {
+        echo "<tr>";
         echo "<td>";
-        echo "<input type='submit' name='btnLogout' value='logout'>";
-      echo "</td>";
+        echo "<input type='input' name='gebruikersnaam' placeholder='gebruikersnaam'>";
+        echo "</td>";
+        echo "<td>";
+        echo "<input type='input' name='wachtwoord' placeholder='wachtwoord'>";
+        echo "</td>";
+        echo "<td>";
+        echo "<input type='submit' name='btnLogin' value='login'>";
+        echo "</td>";
+        echo "<td>";
+        echo "<a href='loginPagina.php'><input type='button' name='btnReg' value='registreren'></a>";
+        echo "</td>";
     }
-}else{
-    echo "<tr>";
-    echo "<td>";
-    echo "<input type='input' name='gebruikersnaam' placeholder='gebruikersnaam'>";
-    echo "</td>";
-    echo "<td>";
-    echo "<input type='input' name='wachtwoord' placeholder='wachtwoord'>";
-    echo "</td>";
-    echo "<td>";
-    echo "<input type='submit' name='btnLogin' value='login'>";
-    echo "</td>";
-    echo "<td>";
-    echo "<a href='loginPagina.php'><input type='button' name='btnReg' value='registreren'></a>";
-    echo "</td>";
 }
-    
+function bestellen()
+{
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "festival";
+
+
+    if (isset($_POST['bestellen'])) {
+
+
+        $basic = $_POST['basic'];
+        $premium = $_POST['premium'];
+        $vip = $_POST['vip'];
+
+        $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+        $user_check = $_SESSION['login_user'];
+        $klantID = "SELECT KlantID FROM klanten WHERE Gebruikersnaam = '" . $user_check . "'";
+        
+        
+
+        $result = mysqli_query($conn, $klantID) or die(mysqli_error($conn));
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                $query = "INSERT INTO bestellingen(KlantID, Basic, Premium, Vip) values('" . $row['KlantID'] . "', '" . $basic . "' , '" . $vip . "', '" . $vip . "' )";
+                mysqli_query($conn, $query) or die(mysqli_error($conn));   
+            }
+        }   
+        $count = mysqli_num_rows($result);
+    }
 }
+
+?>
