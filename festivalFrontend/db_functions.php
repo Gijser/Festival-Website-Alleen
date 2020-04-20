@@ -161,5 +161,8 @@ function bestellen()
         $count = mysqli_num_rows($result);
     }
 }
+function test(){
+$dbhost = "f";
 
+}
 ?>
