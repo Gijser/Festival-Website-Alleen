@@ -1,11 +1,13 @@
 <?php require("header.php"); ?>
-<?php require_once('db_connect.php'); ?>
+<?php //require_once('db_connect.php'); 
+?>
 <?php require_once('db_functions.php'); ?>
 <?php require('authen_session.php'); ?>
 <?php require_once("logout.php"); ?>
 <?php
 login();
 logout();
+
 
 if (!isset($_SESSION['login_user'])) {
     header("location: index.php"); // Redirecting To Home Page
@@ -40,11 +42,32 @@ if (!isset($_SESSION['login_user'])) {
                         <div id="container" class="clear">
                             <div>
                                 <?php profiel(); ?>
+                                <nav id="nav">
+                                    <ul>
+                                        <li><a href="profChange.php">Profielgegevens veranderen</a></li>
+                                    </ul>
+                                </nav>  
 
                     </figcaption>
                     </figure>
                 </article>
             </div>
+
+            <!--tickets-->
+            <div>
+                <div id="container" class="clear">
+                    <h2>uw laatste bestellingen</h2>
+                    <div id="container" class="clear">
+                        <?php
+
+                        ticketShow();
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+
+
 
 
 </form>

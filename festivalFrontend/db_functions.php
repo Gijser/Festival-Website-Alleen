@@ -148,21 +148,70 @@ function bestellen()
         $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
         $user_check = $_SESSION['login_user'];
         $klantID = "SELECT KlantID FROM klanten WHERE Gebruikersnaam = '" . $user_check . "'";
-        
-        
+
+
 
         $result = mysqli_query($conn, $klantID) or die(mysqli_error($conn));
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
                 $query = "INSERT INTO bestellingen(KlantID, Basic, Premium, Vip) values('" . $row['KlantID'] . "', '" . $basic . "' , '" . $vip . "', '" . $vip . "' )";
-                mysqli_query($conn, $query) or die(mysqli_error($conn));   
+                mysqli_query($conn, $query) or die(mysqli_error($conn));
             }
-        }   
+        }
         $count = mysqli_num_rows($result);
     }
 }
-function test(){
-$dbhost = "f";
+function ticketShow()
+{
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $db = "festival";
 
+    $user_check = $_SESSION['login_user'];
+
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+
+
+
+    $query = "SELECT Gebruikersnaam ,BestellingID, Klanten.KlantID , bestellingen.Basic  , Premium, Vip 
+    FROM bestellingen, klanten WHERE Gebruikersnaam = '$user_check' 
+    AND bestellingen.KlantID = (SELECT KlantID FROM Klanten WHERE Gebruikersnaam = '$user_check')";
+    $sql = mysqli_query($conn, $query);
+
+    //print_r($sql);
+
+    if ($sql->num_rows > 0) {
+        echo "<table><tr><th>BestellingsNummer</th><th>Basic</th><th>Premium</th><th>Vip</th></tr>";
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($sql)) {
+            //print_r($row);
+            echo "<tr><td>" . $row["BestellingID"] . "</td><td>" . $row["Basic"] . " </td><td>" . $row["Premium"] . "</td><td>" . $row["Vip"] . "</td></tr>";
+        }
+
+        echo "</table>";
+    } else {
+        echo "0 results";
+    }
 }
-?>
+function ProfChange()
+{
+    if (isset($_POST['EditValue'])) {
+        $dbhost = "localhost";
+        $dbuser = "root";
+        $dbpass = "";
+        $db = "festival";
+
+        //userChecks
+        $user_check = $_SESSION['login_user'];
+
+        $email = $_POST["email"];
+        $gebruikersnaam = $_POST["Gebruikersnaam"];
+        $wachtwoord = $_POST["Wachtwoord"];
+
+
+        $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+        $sqlInsert = "UPDATE klanten SET Email = '$email' , Gebruikersnaam = '$gebruikersnaam', Wachtwoord = '$wachtwoord' WHERE Gebruikersnaam = '$user_check'";
+        $result = mysqli_query($conn, $sqlInsert);
+}
+}
