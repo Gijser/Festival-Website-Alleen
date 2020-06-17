@@ -3,9 +3,9 @@
 <?php require_once('db_functions.php'); ?>
 <?php require_once("logout.php"); ?>
 <?php
-insertDB();
 login();
 logout();
+ProfChange()
 ?>
 
 <form method="post">
